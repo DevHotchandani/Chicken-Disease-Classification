@@ -4,28 +4,28 @@ Deep learning–based web application for identifying chicken diseases from feca
 
 ---
 
-# Project Overview
+## Project Overview
 
-This project predicts whether a chicken fecal image belongs to one of the following categories:
+This project classifies chicken fecal images into the following categories:
 
 - Healthy
 - Coccidiosis
 
-The application uses a pretrained VGG16 convolutional neural network combined with transfer learning for image classification. A Flask-based web interface allows users to upload images and receive predictions instantly.
+The application uses a pretrained VGG16 convolutional neural network with transfer learning for image classification. A Flask-based web interface allows users to upload images and receive predictions instantly.
 
 The project was developed to understand:
 
 - Deep learning workflows
 - Transfer learning concepts
-- CNN-based image classification
+- CNN image classification
 - Image preprocessing techniques
 - Flask integration with machine learning models
-- Modular Python project architecture
+- Modular Python project structure
 - End-to-end ML application development
 
 ---
 
-# Tech Stack
+## Tech Stack
 
 - Python
 - TensorFlow / Keras
@@ -38,27 +38,31 @@ The project was developed to understand:
 
 ---
 
-# Features
+## Features
 
 - Chicken disease image classification
 - Transfer learning using VGG16
 - Flask web application
 - Image upload and prediction system
-- Trained model integration
 - Modular project structure
+- Trained model integration
 - Localhost deployment support
-- Interactive user interface
+- Interactive frontend UI
 
 ---
 
-# Project Structure
+## Project Structure
 
 ```text
 Chicken-Disease-Classification/
 │
 ├── artifacts/
+│   └── training/
+│       └── model.h5
+│
 ├── config/
-├── research/
+│   └── config.yaml
+│
 ├── src/
 │   └── cnnClassifier/
 │       ├── components/
@@ -69,7 +73,12 @@ Chicken-Disease-Classification/
 │       └── utils/
 │
 ├── static/
+│   └── uploads/
+│
 ├── templates/
+│   ├── index.html
+│   └── result.html
+│
 ├── app.py
 ├── main.py
 ├── params.yaml
@@ -80,7 +89,7 @@ Chicken-Disease-Classification/
 
 ---
 
-# Workflow
+## Workflow
 
 ```text
 Data Collection
@@ -94,43 +103,71 @@ Data Collection
 
 ---
 
-# Transfer Learning Model
+## Transfer Learning Model
 
 The model uses:
 
 - VGG16 pretrained on ImageNet
 - Frozen convolutional base layers
 - Custom classification head
-- TensorFlow image preprocessing pipeline
+- TensorFlow preprocessing pipeline
 - Data augmentation techniques
 
 ---
 
-# Model Performance
+## Model Performance
 
-Validation Accuracy:
-
-```text
-~88%
-```
+| Metric | Value |
+|--------|--------|
+| Validation Accuracy | ~88% |
 
 ---
 
-# Web Application
+## Run Locally
 
-The Flask application allows users to:
+### Clone Repository
 
-- Upload chicken fecal images
-- Run disease predictions
-- View classification results instantly
+```bash
+git clone https://github.com/DevHotchandani/Chicken-Disease-Classification.git
+```
 
-Run locally:
+### Move Into Project Directory
+
+```bash
+cd Chicken-Disease-Classification
+```
+
+### Create Virtual Environment
+
+```bash
+python -m venv venv
+```
+
+### Activate Virtual Environment
+
+```bash
+venv\Scripts\activate
+```
+
+### Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Install Local Package
+
+```bash
+pip install -e .
+```
+
+### Run Application
 
 ```bash
 python app.py
 ```
 
-Open in browser:
+### Open In Browser
 
 ```text
 http://127.0.0.1:8080
@@ -138,51 +175,8 @@ http://127.0.0.1:8080
 
 ---
 
-# Installation
 
-Clone repository:
 
-```bash
-git clone https://github.com/DevHotchandani/Chicken-Disease-Classification.git
-```
+## Author
 
-Move into project directory:
-
-```bash
-cd Chicken-Disease-Classification
-```
-
-Create virtual environment:
-
-```bash
-python -m venv venv
-```
-
-Activate virtual environment:
-
-```bash
-venv\Scripts\activate
-```
-
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-Install local package:
-
-```bash
-pip install -e .
-```
-
-Run application:
-
-```bash
-python app.py
-```
----
-
-# Author
-
-Dev Hotchandani
+**Dev Hotchandani**
